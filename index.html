@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🏠 Прогноз ціни нерухомості в Каліфорнії</h1>
+        <h1>Прогноз ціни нерухомості в Каліфорнії</h1>
         <p>Введіть параметри для отримання прогнозу:</p>
         
         <div class="input-group">
@@ -65,12 +65,12 @@
             <input type="number" id="longitude" value="-119.57" step="0.01">
         </div>
         
-        <button onclick="predictPrice()">📈 Прогнозувати ціну</button>
+        <button onclick="predictPrice()">Прогнозувати ціну</button>
         
         <div id="status" class="status">Статус: очікування...</div>
         
         <div id="result" class="result" style="display:none;">
-            <h3>💰 Результат прогнозу:</h3>
+            <h3>Результат прогнозу:</h3>
             <p id="prediction"></p>
         </div>
     </div>
@@ -87,11 +87,11 @@
             try {
                 model = await tf.loadLayersModel('model/tfjs_model/model.json');
                 status.className = 'status success';
-                status.textContent = '✅ Модель завантажена!';
+                status.textContent = 'Модель завантажена!';
                 console.log('Модель завантажена успішно');
             } catch (error) {
                 status.className = 'status error';
-                status.textContent = '❌ Помилка завантаження: ' + error.message;
+                status.textContent = 'Помилка завантаження: ' + error.message;
                 console.error('Помилка:', error);
             }
         }
@@ -134,7 +134,7 @@
                     `У доларах: <strong>$${(predictedValue * 100000).toLocaleString()}</strong>`;
                 
                 status.className = 'status success';
-                status.textContent = '✅ Прогноз успішний!';
+                status.textContent = 'Прогноз успішний!';
                 
                 // Очищаємо пам'ять
                 inputTensor.dispose();
@@ -142,7 +142,7 @@
                 
             } catch (error) {
                 status.className = 'status error';
-                status.textContent = '❌ Помилка прогнозування: ' + error.message;
+                status.textContent = 'Помилка прогнозування: ' + error.message;
                 console.error('Помилка:', error);
             }
         }
